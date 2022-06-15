@@ -1,0 +1,77 @@
+.add-user {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("https://wallpapercave.com/wp/wp7181995.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: sans-serif;
+}
+
+.add-user .form-head {
+    font-family: sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(168, 98, 48);
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.add-user .card {
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    opacity: 85%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.add-user .blue-text {
+    color: #00BCD4
+}
+
+.add-user .form-control-label {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.add-user input,
+textarea, .form-select,
+button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight: 300
+}
+
+.add-user input:focus, .form-select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.add-user .btn-block {
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer
+}
+
+.add-user .btn-block:hover {
+    color: black !important
+}
+
+.add-user button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}

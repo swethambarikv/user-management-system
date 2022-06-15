@@ -1,0 +1,41 @@
+<div>
+    <div class="container" style="margin-top: 20px;">
+        <h2>
+            Employee Details
+        </h2>
+        <table class="table bg-white rounded border">
+         
+            <!-- <table class="table table-dark table-sm"> -->
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Language</th>
+                <th>View</th>
+                <th *ngIf = "this.roleService.roleValue === 'admin'">Action</th>
+
+            </tr>
+            <tr *ngFor="let u of user">
+                <td>{{u.gender==='female'? 'Miss ':'Mr '}}{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.mobile}}</td>
+                <td>{{u.gender}}</td>
+                <td>{{u.topic}}</td>
+                <td><a class="nav-link active" aria-current="page" routerLinkActive="active"
+                        [routerLink]="['/dispaly',u.id]">
+                        <mat-icon>visibility</mat-icon>
+                    </a></td>
+                <td>
+                    <tr *ngIf = "this.roleService.roleValue === 'admin'" >
+                        <!-- this.roleService.roleValue === "admin" && -->
+                        <button type="submit" (click)="remove(u.name)" class="btn btn-danger">Remove</button>&nbsp;
+                        <button type="submit" [routerLink]="['/update-add',u.id]" class="btn btn-info">Edit</button>
+                    </tr>
+                </td>
+            </tr>
+        </table>
+        <a *ngIf = "this.roleService.roleValue === 'admin'" [routerLink]="['/user']" class="btn btn-primary">Add New</a>
+        <button type="submit" [routerLink]="['/']"  class="btn btn-danger">Logout</button>&nbsp;
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary"> -->
+<div class="wrapper">   
+        <div class="form-head"><h1>User Management System</h1>
+        <div>
+            <ul>
+                <li>
+                    <!-- <a class="nav-link active" aria-current="page" routerLinkActive="active" (click)="logIn()"
+                        *ngIf="!display" [routerLink]="['login']" style="color: aliceblue;">Login</a> -->
+                    <a class="nav-link active" aria-current="page" routerLinkActive="active" (click)="logOut()"
+                        *ngIf="display" [routerLink]="['home']" style="color: aliceblue;">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+    
+<!-- </nav> -->
+
+    <div>
+        <ul>
+            <li>
+                <button class="btn btn-success" aria-current="page" routerLinkActive="active" (click)="logIn()"
+                    *ngIf="!display" [routerLink]="['user']" style="color: aliceblue;">Login
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
