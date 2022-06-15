@@ -24,10 +24,10 @@ export class UserComponent implements OnInit {
   psw: string = '';
   // userform: FormGroup;
 
- 
 
 
-  constructor(private router: Router, private loginService: LoginService,private roleService:RoleService) { }
+
+  constructor(private router: Router, private loginService: LoginService, private roleService: RoleService) { }
   role: string = '';
 
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class UserComponent implements OnInit {
   handleClick() {
     console.log(this.username)
     console.log(this.userLogin.username)
-    
+
 
     if (this.username === this.userLogin.username) {
       if (this.psw === this.userLogin.password) {
@@ -64,22 +64,27 @@ export class UserComponent implements OnInit {
 
 
   display(formData: NgForm) {
-    console.log("user role : "+this.role)
-    console.log("user username : "+this.username)
+    console.log("user role : " + this.role)
+    console.log("user username : " + this.username)
     console.log(formData.value);
     this.roleService.getRole(this.role)
 
-    if (this.role == "admin") {
-      if (this.handleClick()) {
-        console.warn("you are admin");
+    if (this.username && this.psw && this.role) {
+      if (this.role == "admin") {
+        if (this.handleClick()) {
+          console.warn("you are admin");
+
+          this.router.navigate(['/table']);
+        }
+      } else {
+
+        console.warn("you are user");
 
         this.router.navigate(['/table']);
       }
-    }else {
-
-      console.warn("you are user");
-
-      this.router.navigate(['/table']);
+    }
+    else {
+      alert("fill this")
     }
 
   }
