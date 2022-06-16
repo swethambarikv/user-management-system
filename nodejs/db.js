@@ -1,10 +1,10 @@
-const mangoose = require('mangoose');
+const mongoose = require('mongoose');
 
-mangoose.connect('mongodb://mongodb://localhost:27017/management', (err) =>{
+mongoose.connect('mongodb://localhost:27017/Management', (err) =>{
     if(!err)
-        console.log('MongoDB connection succeeded');
+        console.log('MongoDB connection succeeded.');
     else
         console.log('Error in MongoDB connection: ' + JSON.stringify(err,undefined,2));
 
 });
-module.exports = mangoose;  
+module.exports = mongoose;  
