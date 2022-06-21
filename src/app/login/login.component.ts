@@ -10,7 +10,7 @@ import { User } from '../user1';
 })
 export class LoginComponent {
   title = 'Form';
-  topics =['Angular','React','PHP','Python','Pearl','.Net','EBA','Oracle','BFS'];
+  topics =['Angular','React','php','Python','Pearl','.Net','EBA','Oracle','BFS'];
   userModel = new User();
   id: number = 0;
   constructor(private router:Router,private login:LoginService,private route: ActivatedRoute){}
