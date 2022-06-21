@@ -9,8 +9,8 @@ import { User } from '../user1';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  title = 'tdfForm';
-  topics =['angular','react','php'];
+  title = 'Form';
+  topics =['Angular','React','PHP','Python','Pearl','.Net','EBA','Oracle','BFS'];
   userModel = new User();
   id: number = 0;
   constructor(private router:Router,private login:LoginService,private route: ActivatedRoute){}
