@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { TableComponent } from './table/table.component';
 import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path: '', component:NavbarComponent},
 {path:'login' ,component:UserComponent,},
@@ -14,7 +14,7 @@ const routes: Routes = [
 { path: 'table', component: TableComponent},
 {path: 'update-add/:id', component: LoginComponent},
 {path:'display',component:DispalyComponent},
-{path:'home', component:HomeComponent}
+// {path:'home', component:HomeComponent}
 
 ];
 

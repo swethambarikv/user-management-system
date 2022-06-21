@@ -12,7 +12,7 @@ import { LoginService } from './service/login.service';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { DispalyComponent } from './dispaly/dispaly.component';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     UserComponent,
     DispalyComponent,
-    HomeComponent
+    // HomeComponent
   ],
   imports: [
     BrowserModule,
