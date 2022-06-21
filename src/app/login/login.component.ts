@@ -32,10 +32,6 @@ export class LoginComponent {
   }
   userdata()
   {
-
-    // this.router.navigate(['/table']);
-    // this.login.setMessage(this.userModel);
-    // localStorage.setItem(this.userModel.name, JSON.stringify(this.userModel));
     if (this.userModel.id === 0) {
       //Create New User
       console.log("id : "+this.userModel.id)
