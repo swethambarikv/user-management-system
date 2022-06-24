@@ -20,7 +20,6 @@
           <small class="text-danger" *ngIf="email.errors['required']">Email is required</small>
         </div>
       </div><br>
-          <!-- <select class="form-select" aria-label="Default select example"> -->
 
       <div class="form-group">
         <label class="form-control-label px-3" >Gender</label><br>
@@ -40,7 +39,7 @@
       </div><br>
   
       <div class="form-group">
-        <label class="form-control-label px-3">Language</label>
+        <label class="form-control-label px-3">Practice</label>
         <select class="custom-select form-select" [class.is-invalid]="topic.invalid && topic.untouched" required #topic="ngModel" name="topic" [(ngModel)]="userModel.topic">
           <option hidden value="">Select any one</option>
           <option *ngFor="let topic of topics">{{topic}}</option>
@@ -48,6 +47,5 @@
         <small class="text-danger" [class.d-none]="topic.valid || topic.untouched">Please choose a topic</small>
       </div><br>
       <button [disabled]="userForm.form.invalid" id="submit" (click)="userdata()" type="submit" class="btn btn-primary">{{userModel.id==0||userModel.id==null ?'Submit':'Update'}}</button>
-      <!-- <button [disabled]="userForm.form.invalid" type="submit" class="btn btn-primary" (click)="userdata()">submit</button><br><br> -->
    </form>
   </div>

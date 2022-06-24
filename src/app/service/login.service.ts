@@ -6,7 +6,7 @@ import { User1 } from '../user/user';
   providedIn: 'root'
 })
 export class LoginService {
-  userLogin=new User1(' ',' ');
+  public userLogin=new User1(' ',' ');
   public userList: User[] = [{
     id:1,
     name: 'Tharani',
@@ -15,36 +15,36 @@ export class LoginService {
     mobile: 9360506369,
     topic:'angular'
 }];
-id1:number=0;
-Role:string='';
+public id1:number=0;
+public Role:string='';
   constructor() { }
-  setMessage(user: User){
+public setMessage(user: User){
     user.id = this.userList.length+1;
     this.userList.push(user);
 
   }
-  getUsersByName(name : String){
+public getUsersByName(name : String){
     this.userList = this.userList.filter(x => x.name != name);
   }
-  getUsers(){
+public getUsers(){
     return this.userList
   }
-  getUsersByID(id: number){
+public getUsersByID(id: number){
     return this.userList.find(x => x.id == id)
   }
-  removeUser(name : String) {
+public removeUser(name : String) {
     this.userList = this.userList.filter(x => x.name != name);
 }
-  loggedIn(){
+public loggedIn(){
     return true;
   }
-  logged(){
+public logged(){
     return true;
   }
-  getRole(role:string){
+public getRole(role:string){
     this.Role=role;
   }
-  updateUser(user:User){
+public updateUser(user:User){
     const userIndex = this.userList.findIndex(x => x.id == user.id);
     this.userList[userIndex] = user;
   }

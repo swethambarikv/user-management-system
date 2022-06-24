@@ -1,9 +1,9 @@
 
 export class User {
-    id:number=0;
-    name: string='';
-    email: string='';
-    mobile: number=0;
-    topic: string='';
-    gender: string='';
+    public id:number=0;
+    public name: string='';
+    public email: string='';
+    public mobile: number=0;
+    public topic: string='';
+    public gender: string='';
 }

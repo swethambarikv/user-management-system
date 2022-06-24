@@ -1,10 +1,10 @@
 <div>
     <div class="container" style="margin-top: 20px;">
         <h2 class="text-center">
-            Admin Details
+            User Table
         </h2>
         <table class="table bg-white rounded border">
-
+         
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -12,7 +12,7 @@
                 <th>Gender</th>
                 <th>Practice</th>
                 <th>View</th>
-                <th *ngIf="this.roleService.roleValue === 'admin'">Action</th>
+                <th *ngIf = "this.roleService.roleValue === 'admin'">Action</th>
 
             </tr>
             <tr *ngFor="let u of user">
@@ -26,18 +26,18 @@
                         <mat-icon>visibility</mat-icon>
                     </a></td>
                 <!-- <td> -->
-            <!-- <tr *ngIf = "this.roleService.roleValue === 'admin'"> -->
+                    <!-- <tr *ngIf = "this.roleService.roleValue === 'admin'" > -->
+                        <!-- <button type="button" class="btn btn-danger">REMOVE</button> -->
 
-                <button type="submit" (click)="remove(u.name)" class="btn btn-danger">Remove</button>&nbsp;
-                <button type="submit" [routerLink]="['/update-add',u.id]" class="btn btn-info">Edit</button>
-            <!-- </tr> -->
-            <!-- </td> -->
+                        <button type="submit" (click)="remove(u.name)" class="btn btn-danger me-3">Remove</button>
+                        <button type="submit" [routerLink]="['/update-add',u.id]" class="btn btn-info">Edit</button>
+                    <!-- </tr> -->
+                <!-- </td> -->
             </tr>
         </table>
+        <a       *ngIf = "this.roleService.roleValue === 'admin'" [routerLink]="['/user']" class="btn btn-primary me-3">Add New</a>
         <div class="text-center">
-        <!-- <a *ngIf = "this.roleService.roleValue=== 'admin'" [routerLink]="['/user']" class="btn btn-primary me-3">Add New</a> -->
-        <button class="btn btn-secondary me-5" [routerLink]="['/admin']" >Add Admin</button>
-        <button type="submit" [routerLink]="['/']" class="btn btn-danger">Logout</button>
+        <button type="submit" [routerLink]="['/']"  class="btn btn-danger">Logout</button>&nbsp;
         </div>
     </div>
 </div>

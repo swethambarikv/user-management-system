@@ -4,6 +4,9 @@
       <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
         <div class="card">
           <h1 class="form-head">Log In</h1>
+
+
+          
           <form class="form-card" onsubmit="event.preventDefault()">
             <div class="row justify-content-between text-left">
               <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">User
@@ -18,26 +21,22 @@
             <div class="row justify-content-between text-left">
               <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Role<span
                     class="text-danger"> *</span></label>
-                <select class="form-select" id="role" name="role" aria-label="Default select example" [(ngModel)]="role" required>
+                <select class="form-select" id="role1" name="role1" aria-label="Default select example" [(ngModel)]="role1" value="role1" required>
                 <option selected disabled>Open this select Role</option>
                 <option value="admin">Admin</option>
                 <option value="user">User</option>
               </select>
-                <!-- <select name="role" id="role" [(ngModel)]="role">
-                  <option disabled>Select Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
-                </select> -->
+              {{role1}}
+                
               </div>
             </div>
             <div class="row justify-content-end">
               <div class="form-group col-sm-12">
-                <button type="submit" class="btn-block btn-primary" value="Login" (click)="display(loginForm)">Log
-                  In</button>
-              </div>
-              <!-- <div class="form-group col-sm-12"> <button type="submit" class="btn-block btn-primary">Log In</button> </div> -->
+                <a *ngIf = "role1 === 'admin'" [routerLink]="['/role']" class="btn btn-primary me-3" value="Login" >Admin Login</a>
+                <a *ngIf = "role1 === 'user'" [routerLink]="['/roleUser']" class="btn btn-primary me-3" value="Login" >User Login</a>
 
-              <!-- <input type="button" value="Login" (click)="display(loginForm)"> -->
+                <!-- <button type="submit" class="btn-block btn-primary" value="Login" (click)="display(loginForm)">Login</button> -->
+              </div>
 
             </div>
           </form>
@@ -47,26 +46,3 @@
   </div>
 </form>
 
-<!-- <div class="row justify-content-center align-items-center"> -->
-<!-- <div class="h1 {font-size: 8px;}"> -->
-
-<!-- <form #loginForm="ngForm">
-<div class="col-md mb-3">
-  <br>
-  <label>Name</label>
-  <input type="text" [(ngModel)]="username" name="username" placeholder="UserName"><br><br>
-  
-  <label>Password</label>
-  <input type="password" [(ngModel)]="psw" name="psw"  placeholder="Password"><br><br>
-  <div><br>
-    
-    <label for="role" ><b>Role</b></label>
-      <select name="role" id="role" [(ngModel)]="role">
-              <option disabled>Select Role</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-    </select>
-    </div><br>
-  <input type="button" value="Login" (click)="display(loginForm)">
-</div>
-</form> -->

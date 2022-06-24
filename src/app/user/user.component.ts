@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User1 } from './user';
-import { RoleService } from '../Role/role.service';
-
+import { RoleService } from '../service/role.service';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -12,37 +12,27 @@ import { RoleService } from '../Role/role.service';
 })
 export class UserComponent implements OnInit {
 
-  // userForm = new FormGroup({
-  //   name: new FormControl(''),
-  //   password: new FormControl(''),
-  //   role: new FormControl('')
-  // })
   userLogin = new User1('Swethambari', 'Swetha27@');
-  // roleList: any = ['Admin','User'];
   roleList: any = ['Admin'];
   username: string = '';
   psw: string = '';
-  // userform: FormGroup;
-
-
-
-
-  constructor(private router: Router, private loginService: LoginService, private roleService: RoleService) { }
-  role: string = '';
+  
+  
+  constructor(private router: Router, private loginService: LoginService, public roleService: RoleService) { }
+  roleValue: string = '';
+  role1:string=''
 
   ngOnInit(): void {
-    // this.role=this.roleService.role;
-
-
-    // this.roleService.roleValue=this.role;
+    this.role1=this.roleService.roleValue;
+    console.log("ts:",this.role1)
 
   }
-  // btnClick(){
-  //   this.router.navigate(['/login']);
 
-  // }
-
-  handleClick() {
+  public rolePass(role1:string){
+    this.role1=role1;
+    this.role1=this.roleService.roleValue;
+  }
+  public handleClick() {
     console.log(this.username)
     console.log(this.userLogin.username)
 
@@ -64,13 +54,13 @@ export class UserComponent implements OnInit {
 
 
   display(formData: NgForm) {
-    console.log("user role : " + this.role)
+    console.log("user role : " + this.role1)
     console.log("user username : " + this.username)
     console.log(formData.value);
-    this.roleService.getRole(this.role)
+    this.roleService.getRole(this.role1)
 
-    if (this.username && this.psw && this.role) {
-      if (this.role == "admin") {
+    if (this.username && this.psw && this.role1) {
+      if (this.role1 == "admin") {
         if (this.handleClick()) {
           console.warn("you are admin");
 
