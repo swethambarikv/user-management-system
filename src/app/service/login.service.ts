@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user1';
 import { User1 } from '../user/user';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,9 +15,12 @@ export class LoginService {
     mobile: '9360506369',
     topic: 'angular'
   }];
+
+  readonly baseURL = "http://localhost:3000/employees/"
+  
   public id1: number = 0;
   public Role: string = '';
-  constructor() { 
+  constructor(private http : HttpClient) { 
     
   }
   public setMessage(user: User) {
