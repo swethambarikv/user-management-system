@@ -16,7 +16,7 @@ export class NavbarComponent {
   display: any;
   constructor(private router: Router, private login: LoginService, private route: ActivatedRoute) { }
   ngOnInit() {
-    let data = localStorage.getItem(this.userModel.name);
+    const data = localStorage.getItem(this.userModel.name);
 
     console.log(" ans " + this.userModel.name);
     console.log(" data :" + data);
@@ -32,7 +32,7 @@ export class NavbarComponent {
       }
     });
   }
-  userdata() {
+  public userdata() {
 
     if (this.userModel.id === 0) {
       //Create New User
@@ -44,11 +44,11 @@ export class NavbarComponent {
     }
     this.router.navigate(['/table']);
   }
-  logIn() {
+  public logIn() {
     this.router.navigate(['/login']);
 
   }
-  logOut() { }
+  public logOut() { }
 
 
 }

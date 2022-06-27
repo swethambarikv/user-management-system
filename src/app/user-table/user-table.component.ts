@@ -11,33 +11,33 @@ import { Router } from '@angular/router'
 })
 export class UserTableComponent implements OnInit {
 
-  name : string ='';
-  userList= new User();
-  roleValue:string='';
-  user : User[] = [];
-  roleName: string='';
-  constructor(private login:LoginService,private router:Router,private route: ActivatedRoute,public roleService:RoleService) { }
+  public name: string = '';
+  public userList = new User();
+  public roleValue: string = '';
+  public user: User[] = [];
+  public roleName: string = '';
+  constructor(private login: LoginService, private router: Router, private route: ActivatedRoute, public roleService: RoleService) { }
 
-  ngOnInit():void{
-    this.user=this.login.getUsers();
-    this.roleName=this.roleService.roleValue;
+  ngOnInit(): void {
+    this.user = this.login.getUsers();
+    this.roleName = this.roleService.roleValue;
 
-    console.log("Role : ",this.roleService.roleValue)
+    console.log("Role : ", this.roleService.roleValue)
   }
 
-  isRole() {
-    if(this.roleService.roleValue === "admin") {
+  public isRole() {
+    if (this.roleService.roleValue === "admin") {
       return true
     }
 
     return false
   }
 
-  remove(name : string){
+  public remove(name: string) {
     localStorage.removeItem(name);
     console.warn("remove id :" + name);
     this.login.removeUser(name);
-    this.user = this.login.getUsers(); 
+    this.user = this.login.getUsers();
   }
 
 }

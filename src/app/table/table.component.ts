@@ -10,35 +10,33 @@ import { RoleService } from '../service/role.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  name : string ='';
-  userList= new User();
+  public name: string = '';
+  public userList = new User();
   // roleValue:string='';
-  user : User[] = [];
-  roleName: string='';
+  public user: User[] = [];
+  public roleName: string = '';
   // role1:string='';
 
-  roleValue:string='';
-  role1:string='';
+  public roleValue: string = '';
+  public role1: string = '';
 
 
-  constructor(private login:LoginService,
-    private router:Router,
+  constructor(private login: LoginService,
+    private router: Router,
     private route: ActivatedRoute,
-    public roleService:RoleService) { }
+    public roleService: RoleService) { }
 
-  ngOnInit():void{
-    this.user=this.login.getUsers();
-    this.roleName=this.roleService.roleValue;
+  ngOnInit(): void {
+    this.user = this.login.getUsers();
+    this.roleName = this.roleService.roleValue;
 
-    console.log("Role : ",this.roleService.roleValue)
-    // this.role1=this.roleService.roleValue;
-    // console.log("Table:",this.role1)
+    console.log("Role : ", this.roleService.roleValue)
   }
 
 
-  rolePass(role1:string){
-    this.role1=role1;
-    this.role1=this.roleService.roleValue;
+  public rolePass(role1: string) {
+    this.role1 = role1;
+    this.role1 = this.roleService.roleValue;
   }
 
 
@@ -48,22 +46,22 @@ export class TableComponent implements OnInit {
 
 
 
-  isRole() {
+  public isRole() {
     // if(this.roleService.getRole(this.roleValue)==="admin"){
-// console.log(this.roleService.getRole(this.roleValue))
+    // console.log(this.roleService.getRole(this.roleValue))
     // }
-    if(this.roleService.roleValue === "admin") {
+    if (this.roleService.roleValue === "admin") {
       return true
     }
 
     return false
   }
 
-  remove(name : string){
+  public remove(name: string) {
     localStorage.removeItem(name);
     console.warn("remove id :" + name);
     this.login.removeUser(name);
-    this.user = this.login.getUsers(); 
+    this.user = this.login.getUsers();
   }
 
 }

@@ -12,7 +12,7 @@ export class LoginService {
     name: 'Tharani',
     email: 'tharani@gmail.com',
     gender: 'female',
-    mobile: 9360506369,
+    mobile: '9360506369',
     topic:'angular'
 }];
 public id1:number=0;

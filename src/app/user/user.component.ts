@@ -12,25 +12,25 @@ import { RouterModule } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  userLogin = new User1('Swethambari', 'Swetha27@');
-  roleList: any = ['Admin'];
-  username: string = '';
-  psw: string = '';
-  
-  
+  public userLogin = new User1('Swethambari', 'Swetha27@');
+  public roleList: any = ['Admin'];
+  public username: string = '';
+  public psw: string = '';
+
+
   constructor(private router: Router, private loginService: LoginService, public roleService: RoleService) { }
-  roleValue: string = '';
-  role1:string=''
+  public roleValue: string = '';
+  public role1: string = ''
 
   ngOnInit(): void {
-    this.role1=this.roleService.roleValue;
-    console.log("ts:",this.role1)
+    this.role1 = this.roleService.roleValue;
+    console.log("ts:", this.role1)
 
   }
 
-  public rolePass(role1:string){
-    this.role1=role1;
-    this.role1=this.roleService.roleValue;
+  public rolePass(role1: string) {
+    this.role1 = role1;
+    this.role1 = this.roleService.roleValue;
   }
   public handleClick() {
     console.log(this.username)
@@ -53,7 +53,7 @@ export class UserComponent implements OnInit {
   }
 
 
-  display(formData: NgForm) {
+  public display(formData: NgForm) {
     console.log("user role : " + this.role1)
     console.log("user username : " + this.username)
     console.log(formData.value);

@@ -29,7 +29,7 @@ import { RoleUserComponent } from './role-user/role-user.component';
     AdminComponent,
     UserTableComponent,
     RoleUserComponent
-    
+
   ],
   imports: [
     BrowserModule,

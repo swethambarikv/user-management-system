@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'display', component: DispalyComponent },
   { path: 'role', component: RoleComponent },
   { path: 'admin', component: AdminComponent },
-  {path:'userTable',component:UserTableComponent},
-  {path:'roleUser',component:RoleUserComponent}
+  { path: 'userTable', component: UserTableComponent },
+  { path: 'roleUser', component: RoleUserComponent }
 ];
 
 @NgModule({

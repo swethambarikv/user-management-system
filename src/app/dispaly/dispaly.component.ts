@@ -28,7 +28,4 @@ export class DispalyComponent implements OnInit {
       }
     });
   }
-  // display(){
-  //   return  this.service.getUsersByID(this.id);
-  // }
 }

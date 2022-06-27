@@ -15,7 +15,7 @@ export class LoginComponent {
   id: number = 0;
   constructor(private router:Router,private login:LoginService,private route: ActivatedRoute){}
   ngOnInit(){
-    let data = localStorage.getItem(this.userModel.name);
+    const data = localStorage.getItem(this.userModel.name);
     console.log(" ans "+this.userModel.name);
     console.log(" data :"+data);
     console.log("Id : "+this.userModel.id);
@@ -30,7 +30,7 @@ export class LoginComponent {
       }
     });
   }
-  userdata()
+  public userdata()
   {
     if (this.userModel.id === 0) {
       //Create New User
