@@ -9,7 +9,6 @@ import { RoleComponent } from './role/role.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { RoleUserComponent } from './role-user/role-user.component';
-
 const routes: Routes = [
   { path: '', component: NavbarComponent },
   { path: 'login', component: UserComponent, },
@@ -18,8 +17,8 @@ const routes: Routes = [
   { path: 'update-add/:id', component: LoginComponent },
   { path: 'display', component: DispalyComponent },
   { path: 'role', component: RoleComponent },
-  { path: 'admin', component: AdminComponent},
-  { path: 'userTable', component: UserTableComponent},
+  { path: 'admin', component: AdminComponent },
+  { path: 'userTable', component: UserTableComponent },
   { path: 'roleUser', component: RoleUserComponent }
 ];
 
