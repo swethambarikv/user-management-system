@@ -22,14 +22,14 @@
                 <td>{{u.gender}}</td>
                 <td>{{u.topic}}</td>
                 <td><a class="nav-link active" aria-current="page" routerLinkActive="active"
-                        [routerLink]="['/dispaly',u.id]">
+                        [routerLink]="['/dispaly',u._id]">
                         <mat-icon>visibility</mat-icon>
                     </a></td>
                 <!-- <td> -->
             <!-- <tr *ngIf = "this.roleService.roleValue === 'admin'"> -->
 
                 <button type="submit" (click)="remove(u.name)" class="btn btn-danger">Remove</button>&nbsp;
-                <button type="submit" [routerLink]="['/update-add',u.id]" class="btn btn-info">Edit</button>
+                <button type="submit" [routerLink]="['/update-add',u._id]" class="btn btn-info">Edit</button>
             <!-- </tr> -->
             <!-- </td> -->
             </tr>
