@@ -12,7 +12,7 @@ export class NavbarComponent {
   title = 'tdfForm';
   topics = ['angular', 'react', 'php'];
   userModel = new User();
-  id: number = 0;
+  _id: number = 0;
   display: any;
   constructor(private router: Router, private login: LoginService, private route: ActivatedRoute) { }
   ngOnInit() {
@@ -20,12 +20,12 @@ export class NavbarComponent {
 
     console.log(" ans " + this.userModel.name);
     console.log(" data :" + data);
-    console.log("Id : " + this.userModel.id);
+    console.log("Id : " + this.userModel._id);
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      if (this.id != null) {
-        this.userModel.id = (params['id']);
-        const data = this.login.getUsersByID(this.id);
+      this._id = params['_id'];
+      if (this._id != null) {
+        this.userModel._id = (params['_id']);
+        const data = this.login.getUsersByID(this._id);
         if (data) {
           this.userModel = (data);
         }
@@ -34,9 +34,9 @@ export class NavbarComponent {
   }
   public userdata() {
 
-    if (this.userModel.id === 0) {
+    if (this.userModel._id === 0) {
       //Create New User
-      console.log("id : " + this.userModel.id)
+      console.log("_id : " + this.userModel._id)
       this.login.setMessage(this.userModel);
     } else {
       //Update User info
