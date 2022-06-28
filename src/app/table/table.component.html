@@ -23,7 +23,7 @@
                 <td>{{u.topic}}</td>
                 <td><a class="nav-link active" aria-current="page" routerLinkActive="active"
                         [routerLink]="['/dispaly',u._id]">
-                        <mat-icon>visibility</mat-icon>
+                        <mat-icon (click)="changeIcon('star')">visibility</mat-icon>
                     </a></td>
                 <!-- <td> -->
             <!-- <tr *ngIf = "this.roleService.roleValue === 'admin'"> -->

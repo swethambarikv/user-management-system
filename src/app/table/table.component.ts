@@ -54,5 +54,10 @@ export class TableComponent implements OnInit {
     this.login.removeUser(name);
     this.user = this.login.getUsers();
   }
+  public icon = 'close';
+  public changeIcon(newIcon: string) {
+    this.icon=newIcon;
+  }
+
 
 }

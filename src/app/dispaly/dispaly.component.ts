@@ -11,14 +11,14 @@ import { User } from '../user1';
 export class DispalyComponent implements OnInit {
   id: number = 0;
   userList = new User();
-  constructor(private service:LoginService,private router:Router,private route: ActivatedRoute) { }
+  constructor(private service: LoginService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id'];
       console.log(this.id);
       if (this.id != null) {
-        this.userList._id=(params['id']);
+        this.userList._id = (params['id']);
         const data = this.service.getUsersByID(this.id);
         console.log(this.userList);
         if (data) {

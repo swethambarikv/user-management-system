@@ -39,5 +39,5 @@ export class UserTableComponent implements OnInit {
     this.login.removeUser(name);
     this.user = this.login.getUsers();
   }
-
+  
 }
