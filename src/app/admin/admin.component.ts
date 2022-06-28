@@ -16,18 +16,18 @@ export class AdminComponent implements OnInit {
 
   public topics = ['Angular', 'React', 'php', 'Python', 'Pearl', '.Net', 'EBA', 'Oracle', 'BFS'];
   public userModel = new User();
-  public id: number = 0;
+  public _id: number = 0;
   constructor(private router: Router, private login: LoginService, private route: ActivatedRoute) { }
   ngOnInit() {
     const data = localStorage.getItem(this.userModel.name);
     console.log(" ans " + this.userModel.name);
     console.log(" data :" + data);
-    console.log("Id : " + this.userModel.id);
+    console.log("_Id : " + this.userModel._id);
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      if (this.id != null) {
-        this.userModel.id = (params['id']);
-        const data = this.login.getUsersByID(this.id);
+      this._id = params['_id'];
+      if (this._id != null) {
+        this.userModel._id = (params['_id']);
+        const data = this.login.getUsersByID(this._id);
         if (data) {
           this.userModel = (data);
         }
@@ -35,9 +35,9 @@ export class AdminComponent implements OnInit {
     });
   }
   public userdata() {
-    if (this.userModel.id === 0) {
+    if (this.userModel._id === 0) {
       //Create New User
-      console.log("id : " + this.userModel.id)
+      console.log("_id : " + this.userModel._id)
       this.login.setMessage(this.userModel);
     } else {
       //Update User info

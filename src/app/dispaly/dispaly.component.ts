@@ -18,7 +18,7 @@ export class DispalyComponent implements OnInit {
       this.id = params['id'];
       console.log(this.id);
       if (this.id != null) {
-        this.userList.id=(params['id']);
+        this.userList._id=(params['id']);
         const data = this.service.getUsersByID(this.id);
         console.log(this.userList);
         if (data) {

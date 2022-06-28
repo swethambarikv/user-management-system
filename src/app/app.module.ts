@@ -16,7 +16,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { UserTableComponent } from './user-table/user-table.component';
 import { RoleUserComponent } from './role-user/role-user.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,8 @@ import { RoleUserComponent } from './role-user/role-user.component';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

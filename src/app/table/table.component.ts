@@ -39,17 +39,8 @@ export class TableComponent implements OnInit {
     this.role1 = this.roleService.roleValue;
   }
 
-
-
-
-
-
-
-
   public isRole() {
-    // if(this.roleService.getRole(this.roleValue)==="admin"){
-    // console.log(this.roleService.getRole(this.roleValue))
-    // }
+
     if (this.roleService.roleValue === "admin") {
       return true
     }

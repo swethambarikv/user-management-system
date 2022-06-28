@@ -54,6 +54,6 @@
               <small class="text-danger" [class.d-none]="topic.valid || topic.untouched">Please choose a topic</small>
             </div><br>
             <button [disabled]="userForm.form.invalid" id="submit" (click)="userdata()" type="submit"
-              class="btn btn-primary">{{userModel.id==0||userModel.id==null ?'Submit':'Update'}}</button>
+              class="btn btn-primary">{{userModel._id==0||userModel._id==null ?'Submit':'Update'}}</button>
           </form>
         </div>

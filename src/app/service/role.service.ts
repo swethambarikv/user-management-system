@@ -9,7 +9,7 @@ export class RoleService {
   public roleValue: string = '';
   public getRole(role: string) {
     console.log("service roll b" + this.roleValue)
-    this.roleValue = role
+    this.roleValue = role;
     console.log("service roll a" + this.roleValue)
     return this.roleValue;
   }
