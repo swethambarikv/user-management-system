@@ -78,5 +78,9 @@ export class UserComponent implements OnInit {
     }
 
   }
+  public displayAdmin(){
+    console.log("Username(Admin): "+this.username);
+    console.log("Password(Admin): "+this.psw);
+  }
 }
 
