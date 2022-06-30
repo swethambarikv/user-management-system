@@ -51,7 +51,7 @@ export class UserComponent implements OnInit {
       return false
     }
   }
-
+  
 
   public display(formData: NgForm) {
     console.log("user role : " + this.role1)

@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
 import { User } from '../user1';
 import { RoleService } from '../service/role.service';
+import { NgForm } from '@angular/forms';
+
+declare let M: any;
 
 @Component({
   selector: 'app-table',
@@ -31,7 +34,87 @@ export class TableComponent implements OnInit {
     this.roleName = this.roleService.roleValue;
 
     console.log("Role : ", this.roleService.roleValue)
+
+    this.resetForm();
+    this.refreshForm();
   }
+
+  resetForm(form?: NgForm) {
+    console.log("reset form");
+    if (form) {
+      form.reset();
+      this.login.user2 = {
+        _id: 0,
+        name: '',
+        email: '',
+        mobile: '',
+        topic: '',
+        gender: '',
+      }
+    }
+  }
+
+  onSubmit(form: NgForm) {
+
+    if (form.value._id == "") {
+
+      this.login.postUser(form.value).subscribe((res) => {
+
+        this.resetForm(form);
+
+        this.refreshForm();
+
+        M.toast({
+
+          html: 'Saved Successfully', classes: 'rounded'
+
+        });
+
+      })
+
+    }
+
+    else {
+
+      this.login.putUser(form.value).subscribe((res) => {
+
+        this.resetForm(form);
+
+        this.refreshForm();
+
+        M.toast({
+
+          html: 'Updated Successfully', classes: 'rounded'
+
+        });
+
+      });
+
+    };
+
+
+
+  }
+
+  refreshForm() {
+
+    this.login.getUser().subscribe((res) => {
+
+      this.login.user1 = res as User[];
+
+    });
+
+  }
+
+  onEdit(use: User) {
+    console.log("edit method")
+    this.login.user2 = use;
+
+  }
+
+
+
+
 
 
   public rolePass(role1: string) {
@@ -56,7 +139,7 @@ export class TableComponent implements OnInit {
   }
   public icon = 'close';
   public changeIcon(newIcon: string) {
-    this.icon=newIcon;
+    this.icon = newIcon;
   }
 
 

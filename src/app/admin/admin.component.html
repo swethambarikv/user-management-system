@@ -3,7 +3,7 @@
     <div class="row d-flex justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
         <div class="card">
-          <h1 class="form-head">Add User</h1>
+          <h1 class="form-head">Add Admin</h1>
           <form #userForm="ngForm" novalidate>
             <div class="form-group">
               <label class="form-control-label px-3">Name</label>
@@ -46,7 +46,7 @@
 
             <div class="form-group">
               <label class="form-control-label px-3">Practice</label>
-              <select class="custom-select form-select" [class.is-invalid]="topic.invalid && topic.untouched" required
+              <select class="custom-select form-select" [class.is-invalid]="topic.invalid && topic.untouched" 
                 #topic="ngModel" name="topic" [(ngModel)]="userModel.topic">
                 <option hidden value="">Select any one</option>
                 <option *ngFor="let topic of topics">{{topic}}</option>
@@ -54,6 +54,6 @@
               <small class="text-danger" [class.d-none]="topic.valid || topic.untouched">Please choose a topic</small>
             </div><br>
             <button [disabled]="userForm.form.invalid" id="submit" (click)="userdata()" type="submit"
-              class="btn btn-primary">{{userModel._id==0||userModel._id==null ?'Submit':'Update'}}</button>
+              class="btn btn-primary" [routerLink]="['/table']">{{userModel._id==0||userModel._id==null ?'Submit':'Update'}}</button>
           </form>
         </div>

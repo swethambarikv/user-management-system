@@ -37,6 +37,8 @@
         </table>
         <a       *ngIf = "this.roleService.roleValue === 'admin'" [routerLink]="['/user']" class="btn btn-primary me-3">Add New</a>
         <div class="text-center">
+            <button type="submit" [routerLink]="['/roleUser']"  class="btn btn-primary me-3">Back</button>&nbsp;
+
         <button type="submit" [routerLink]="['/']"  class="btn btn-danger">Logout</button>&nbsp;
         </div>
     </div>

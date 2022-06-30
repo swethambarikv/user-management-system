@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../user1';
 import { User1 } from '../user/user';
 import { HttpClient } from '@angular/common/http';
+import { AdminComponent } from '../admin/admin.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class LoginService {
   }];
   user1: User[] = [];
   user2!: User;
-  readonly baseURL = "http://localhost:3000/employees/"
+  readonly baseURL = "http://localhost:3000/users"
   public id1: number = 0;
   public Role: string = '';
   constructor(private http: HttpClient) { }
@@ -53,9 +54,12 @@ export class LoginService {
   }
   // HTTP methods
   public getUser() {
+    console.log("get user");
     return this.http.get(this.baseURL);
+    
   }
   public postUser(newUser: User) {
+    console.log("post user")
     return this.http.post(this.baseURL, newUser);
 
   }
@@ -65,4 +69,18 @@ export class LoginService {
   public deleteUser(_id: number) {
     return this.http.delete(this.baseURL + `/${_id}`)
   }
+  // //HTTP admin
+  // public getAdmin() {
+  //   return this.http.get(this.baseURL);
+  // }
+  // public postAdmin(newAdmin: Admin) {
+  //   return this.http.post(this.baseURL, newAdmin);
+
+  // }
+  // public putAdmin(newAdmin: Admin) {
+  //   return this.http.put(this.baseURL + `/${newAdmin._id}`, newAdmin)
+  // }
+  // public deleteAdmin(_id: number) {
+  //   return this.http.delete(this.baseURL + `/${_id}`)
+  // }
 }

@@ -25,11 +25,11 @@
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
 }
 
-.add-user .blue-text {
+.add-admin .blue-text {
     color: #00BCD4
 }
 
-.add-user .form-control-label {
+.add-admin .form-control-label {
     margin-bottom: 0;
     margin-top: 1rem;
     font-size: x-large;
@@ -65,7 +65,7 @@ button {
     cursor: pointer
 }
 
-.add-user .btn-block:hover {
+.add-admin .btn-block:hover {
     color: black !important
 }
 

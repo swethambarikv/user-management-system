@@ -15,17 +15,31 @@
                   UserName
                   <span class="text-danger"> *</span>
                 </label>
-                <input type="text" id="fname" name="fname" placeholder="Enter your user name" [(ngModel)]="username"required>
+                <input type="text" id="fname" name="fname" placeholder="Enter your user name" [(ngModel)]="username"
+                  required>
               </div>
             </div>
 
             <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-12 flex-column d-flex"> 
+
+              <div class="form-group col-sm-12 flex-column d-flex">
+                <label class="form-control-label px-3">
+                  Email
+                  <span class="text-danger"> *</span>
+                </label>
+                <input type="text" id="email" name="email" placeholder="Enter your email"required>
+                <!-- <input name="officialEmail" [ngModel]="user.officialEmail" required [pattern]="emailPattern" #offEmail="ngModel" placeholder="Enter your email"required>  -->
+              </div>
+            </div>
+
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-12 flex-column d-flex">
                 <label class="form-control-label px-3">
                   Password
                   <span class="text-danger"> *</span>
-                </label> 
-                <input type="password" id="password" [(ngModel)]="psw"name="password" required> </div>
+                </label>
+                <input type="password" id="password" [(ngModel)]="psw" name="password" required>
+              </div>
             </div>
             <div class="row justify-content-between text-left">
               <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Role<span
@@ -42,12 +56,11 @@
             </div>
             <div class="row justify-content-end">
               <div class="form-group col-sm-12">
-                <a *ngIf="role1 === 'admin'" [routerLink]="['/role']" class="btn btn-primary me-3" value="Login" (click)="displayAdmin()">Admin
+                <a *ngIf="role1 === 'admin'" [routerLink]="['/role']" class="btn btn-primary me-3" value="Login"
+                  (click)="displayAdmin()">Admin
                   Login</a>
                 <a *ngIf="role1 === 'user'" [routerLink]="['/roleUser']" class="btn btn-primary me-3" value="Login">User
                   Login</a>
-
-                <!-- <button type="submit" class="btn-block btn-primary" value="Login" (click)="display(loginForm)">Login</button> -->
               </div>
 
             </div>

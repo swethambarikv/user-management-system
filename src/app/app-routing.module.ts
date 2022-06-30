@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: UserComponent, },
   { path: 'user', component: LoginComponent },
   { path: 'table', component: TableComponent },
-  { path: 'update-add/:id', component: LoginComponent },
+  { path: 'update-add/:id', component: AdminComponent },
   { path: 'display', component: DispalyComponent },
   { path: 'role', component: RoleComponent },
   { path: 'admin', component: AdminComponent },
